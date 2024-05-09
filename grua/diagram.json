@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Mauri_XD",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard-half",
+      "id": "bb1",
+      "top": 53.7,
+      "left": 233.7,
+      "rotate": 90,
+      "attrs": {}
+    },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": 212.97,
+      "left": 170.7,
+      "rotate": 180,
+      "attrs": {}
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -205.21, "left": 293.19, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo2", "top": -115.82, "left": 290.86, "attrs": {} }
+  ],
+  "connections": [
+    [ "joystick1:GND", "bb1:bn.16", "black", [ "v-13.48", "h1.14" ] ],
+    [ "joystick1:VCC", "bb1:bp.17", "red", [ "v-9.48", "h8.69" ] ],
+    [ "uno:GND.1", "bb1:bn.1", "black", [ "v-17.74", "h149.21" ] ],
+    [ "uno:5V", "bb1:bp.25", "red", [ "v161.92", "h152.88" ] ],
+    [ "bb1:bn.2", "servo2:GND", "black", [ "h0" ] ],
+    [ "servo1:GND", "servo2:GND", "black", [ "h0" ] ],
+    [ "bb1:bp.1", "servo1:V+", "red", [ "v-50.02", "h-44.57", "v-121.6" ] ],
+    [ "servo2:V+", "servo1:V+", "red", [ "h-20.24", "v-87.39", "h3.58" ] ],
+    [ "servo1:PWM", "uno:6", "green", [ "h0" ] ],
+    [ "servo2:PWM", "uno:5", "green", [ "h0" ] ],
+    [ "joystick1:HORZ", "uno:A1", "green", [ "v0" ] ],
+    [ "joystick1:VERT", "uno:A2", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
